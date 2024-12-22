@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test for SocialTech Studio</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    />
+    <style>
+      .close {
+        opacity: 1 !important;
+        color: white;
+        margin-top: -1rem;
+      }
+      .close:hover {
+        color: white;
+      }
+      .glyphicon:hover {
+        color: red;
+      }
+      .modal-footer {
+        border-top: none !important;
+      }
+
+      .modal-header {
+        border-bottom: none !important;
+        margin-bottom: 2rem;
+      }
+
+      .modal-content {
+        margin-top: 10rem;
+        background: black !important;
+      }
+      body.modal-open {
+        margin-right: 0;
+        overflow: hidden;
+      }
+      a {
+        color: black;
+      }
+      a:hover {
+        color: black;
+      }
+      .footer {
+        margin-top: 3rem;
+        width: 100%;
+        bottom: 0;
+        padding: 5px;
+        background-color: #f8fcfc !important;
+      }
+      .responsive-text {
+        font-size: 16px; /* Default size */
+      }
+
+      #beachPicture {
+        height: 30rem;
+      }
+      .card {
+        background: white;
+      }
+      @media (max-width: 767px) {
+        .card2 {
+          border-radius: 20px;
+
+          box-shadow: 10px 5px 5px #7a6868;
+        }
+        .container {
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+
+        .image-container img {
+          border-radius: 20px;
+        }
+        .card {
+          border-radius: 20px;
+
+          margin-top: 2rem;
+          height: 30rem;
+          box-shadow: 10px 5px 5px #7a6868;
+        }
+      }
+      @media (min-width: 768px) {
+        #mainSection {
+          box-shadow: 10px 5px 5px #7a6868;
+        }
+        #beachPicture {
+          height: 40rem;
+        }
+        .card {
+          /* border-left: black solid 2px; */
+          height: 20rem;
+          display: flex;
+        }
+        .responsive-text {
+          font-size: 20px; /* Medium screen size */
+        }
+        .footer {
+          position: absolute;
+        }
+
+        .modal-content {
+          margin-top: 4rem;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .responsive-text {
+          font-size: 30px;
+          /* Large screen size */
+        }
+        .title {
+          text-wrap: nowrap;
+        }
+      }
+      @media (min-width: 1200px) {
+        .card {
+          height: 25rem;
+        }
+        #beachPicture {
+          height: 50rem;
+        }
+        iframe {
+          height: 40rem !important;
+        }
+
+        .modal-dialog {
+          width: 1000px;
+        }
+      }
+      .image-container {
+        width: 100%;
+        height: 100%;
+        transition: filter 0.5s ease-in-out;
+        /*overflow: hidden; */
+      }
+      .dimPicture:hover {
+        filter: brightness(0.5);
+      }
+
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .remove-padding {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .play-icon {
+        position: absolute;
+        display: flex;
+        z-index: 20;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        height: 100%;
+        font-size: 25px;
+        color: black;
+        bottom: 0;
+        pointer-events: none; /* Pass hover events through */
+      }
+
+      iframe {
+        width: 100%;
+        height: 30rem;
+      }
+
+      @media (min-width: 768px) and (max-width: 830px) {
+        #mainSection {
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: #eceaea">
+    <header
+      style="background-color: #f8fcfc !important; margin: auto; padding: 5px"
+    >
+      <h1
+        class="responsive-text text-center"
+        style="margin: auto; padding: 10px"
+        class="text-center"
+      >
+        Test for Socialtech Studio
+      </h1>
+    </header>
+
+    <!-- Main section of the Static page -->
+    <section>
+      <div style="margin-top: 8rem" class="container">
+        <div id="mainSection" class="row">
+          <a id="playBeach" data-toggle="modal" href="#myModal">
+            <div
+              class="col-sm-6 card2 remove-padding"
+              style="position: relative"
+            >
+              <div class="image-container dimPicture" id="beachPicture">
+                <img src="images/beach.jpeg" />
+              </div>
+              <div class="play-icon">
+                <span
+                  class="glyphicon glyphicon-play"
+                  style="
+                    padding: 15px;
+                    background-color: white;
+                    border-radius: 50%;
+                  "
+                ></span>
+              </div>
+            </div>
+          </a>
+          <div class="col-sm-6">
+            <div class="row">
+              <a id="playPuppy" data-toggle="modal" href="#myModal">
+                <div
+                  class="col-sm-6 card remove-padding"
+                  style="position: relative"
+                >
+                  <div class="image-container dimPicture">
+                    <img src="images/puppy.jpg" />
+                  </div>
+                  <div class="play-icon">
+                    <span
+                      class="glyphicon glyphicon-play"
+                      style="
+                        padding: 15px;
+                        background-color: white;
+                        border-radius: 50%;
+                      "
+                    ></span>
+                  </div>
+                </div>
+              </a>
+              <div
+                class="col-sm-6 card"
+                style="align-items: center; display: flex"
+              >
+                <div style="width: 100%; margin-top: 3rem" class="text-center">
+                  <span class="title" style="font-size: large"
+                    >Live your life
+                    <span style="font-weight: 600">Stress Free !</span></span
+                  >
+                  <p style="margin-top: 2rem">
+                    Click the play button to lower your stress levels.
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6 card remove-padding">
+                <div class="image-container">
+                  <img src="images/palms.jpg" />
+                </div>
+              </div>
+              <a id="playPark" data-toggle="modal" href="#myModal">
+                <div class="col-sm-6 card remove-padding">
+                  <div class="image-container dimPicture">
+                    <img src="images/park.png" />
+                  </div>
+
+                  <div class="play-icon">
+                    <span
+                      class="glyphicon glyphicon-play"
+                      style="
+                        padding: 15px;
+                        background-color: white;
+                        border-radius: 50%;
+                      "
+                    ></span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe
+              id="iframe"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <footer class="footer">
+      <h5 class="text-center">Jurgen Xibrraku December 2024 ©</h5>
+    </footer>
+    <script src="//code.jquery.com/jquery.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+
+    <script>
+      let playBeach = document.getElementById("playBeach");
+      let playPuppy = document.getElementById("playPuppy");
+      let playPark = document.getElementById("playPark");
+      let iframe = document.getElementById("iframe");
+
+      playBeach.addEventListener("click", function () {
+        iframe.src =
+          "https://www.youtube.com/embed/hRpxiDCZj8E?autoplay=1&mute=1&playsinline=1";
+        iframe.allow = "autoplay";
+      });
+      playPuppy.addEventListener("click", function () {
+        iframe.src =
+          "https://www.youtube.com/embed/eN5AdC20tGE?autoplay=1&mute=1&playsinline=1";
+        iframe.allow = "autoplay";
+      });
+      playPark.addEventListener("click", function () {
+        iframe.src =
+          "https://www.youtube.com/embed/iWSjBBQbICA?autoplay=1&mute=1&playsinline=1";
+        iframe.allow = "autoplay";
+      });
+
+      $("#myModal").on("hidden.bs.modal", function () {
+        iframe.src = "";
+      });
+    </script>
+  </body>
+</html>
